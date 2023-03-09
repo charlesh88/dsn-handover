@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSN Handover</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body translate="no">
+<div class="page-section page-header-grid">
+    <h1>DSN Handover Calculator <span class="app-version">v1.0.0</span></h1>
+</div>
+
+<div class="sep"></div>
+
+<div id="sectionInputTimes" class="page-section">
+    <div class="inputs-grid">
+        <div class="__header"></div>
+        <div class="__header"></div>
+        <div class="__header">Hour</div>
+        <div class="__header">Minute</div>
+
+        <div class="__label em --cur">Cur Stn</div>
+        <div class="__label">D/L off</div>
+        <input required type="number" step="1" min="0" max="23" class="__input" id="inputCurStnDLOffH" value="06" />
+        <input required type="number" step="1" min="0" max="59" class="__input" id="inputCurStnDLOffM" value="56" />
+
+        <div class="__label"></div>
+        <div class="__label">U/L off</div>
+        <input required type="number" step="1" min="0" max="23" class="__input" id="inputCurStnULOffH" value="06" />
+        <input required type="number" step="1" min="0" max="59" class="__input" id="inputCurStnULOffM" value="52" />
+
+        <div class="__label em --new">New Stn</div>
+        <div class="__label">D/L on</div>
+        <input required type="number" step="1" min="0" max="23" class="__input" id="inputNewStnDLOnH" value="07" />
+        <input required type="number" step="1" min="0" max="59" class="__input" id="inputNewStnDLOnM" value="00" />
+
+        <div class="__label"></div>
+        <div class="__label">U/L on</div>
+        <input required type="number" step="1" min="0" max="23" class="__input" id="inputNewStnULOnH" value="07" />
+        <input required type="number" step="1" min="0" max="59" class="__input" id="inputNewStnULOnM" value="12" />
+    </div>
+
+    <div class="controls">
+        <button id="btnCalc" onclick="calc();" class="em">CALC</button>
+        <!--        <button id="btnStoreLocal" onclick="storeLocal();">SAVE INPUTS</button>-->
+    </div>
+</div>
+<div class="page-section">
+   <div id="sectionTimeList" class="events-grid"></div>
+</div>
+
+<script src="utilities.js"></script>
+<script src="main.js"></script>
+<script>
+    window.addEventListener('load', appInit, false);
+</script>
+</body>
+</html>
+
